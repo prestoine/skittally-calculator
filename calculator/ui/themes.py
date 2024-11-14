@@ -2,36 +2,40 @@
 from dataclasses import dataclass
 from typing import Literal
 
-ThemeType = Literal["light", "dark"]
+ThemeType = Literal["dark"]
 
 @dataclass
 class ThemeColors:
     background: str
-    foreground: str
-    button_bg: str
-    button_fg: str
-    menu_bg: str
-    menu_fg: str
+    display_bg: str
+    display_fg: str
+    button_number_bg: str
+    button_number_fg: str
+    button_operator_bg: str
+    button_operator_fg: str
+    button_clear_bg: str
+    button_clear_fg: str
+    button_equals_bg: str
+    button_equals_fg: str
+    button_outline: str
 
 class ThemeManager:
-    """Manages application themes and colors."""
+    """Manages calculator theme."""
     
     THEMES = {
-        "light": ThemeColors(
-            background="#FFFFFF",
-            foreground="#000000",
-            button_bg="#DDDDDD",
-            button_fg="#000000",
-            menu_bg="#DDDDDD",
-            menu_fg="#000000"
-        ),
         "dark": ThemeColors(
-            background="#2E2E2E",
-            foreground="#FFFFFF",
-            button_bg="#444444",
-            button_fg="#FFFFFF",
-            menu_bg="#444444",
-            menu_fg="#FFFFFF"
+            background="#1A1A1A",  # Dark background
+            display_bg="#1A1A1A",  # Same as background
+            display_fg="#FFFFFF",  # White text
+            button_number_bg="#333333",  # Dark gray for numbers
+            button_number_fg="#FFFFFF",  # White text
+            button_operator_bg="#FF9F0A",  # Orange
+            button_operator_fg="#FFFFFF",  # White text
+            button_clear_bg="#666666",  # Gray for clear
+            button_clear_fg="#FFFFFF",  # White text
+            button_equals_bg="#FF9F0A",  # Orange for equals
+            button_equals_fg="#FFFFFF",  # White text
+            button_outline="#FFFFFF"  # White outline
         )
     }
     
